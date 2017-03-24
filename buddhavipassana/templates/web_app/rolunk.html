@@ -1,0 +1,29 @@
+﻿{% extends "web_app/baseWebapp.html" %}
+{% load staticfiles %}
+ {% block body_block %}
+
+<div class="container">
+    <h1></h1>
+      <br><br><br><br><br><br>
+      <h1></h1>
+    <br>
+
+        
+        <div class="container text-center">
+
+
+
+                    <h1 class="">BUDDHAVIPASSANA.HU</h1><br>
+                    <p class="">A weboldal azzal a céllal jött létre, hogy meditációs tanfolyamok szervezésével, Magyarországon is megismertesse Tiszteletreméltó <a href="{% url 'web_app:ajahn' %}" class="text-primary">Ajahn Tong Sirimangalo</a> thaiföldi mester hagyományvonalán gyakorolt Vipassana meditációt.<br><br>A technika nemzetközi szinten való terjesztése <a href="{% url 'web_app:oktatok' %}" class="text-primary">Thanat és Kathryn Chindaporn</a> nevéhez fűződik, akik kezdeményezték a magyarországi tanfolyamszervezést is.&nbsp;<br><br></p>
+                    <div class=""> <a class="btn btn-primary" href="{% url 'web_app:ajahn' %}">Ajahn Tong</a>
+                        <a class="btn btn-primary" href="{% url 'web_app:oktatok' %}">Oktatók</a>
+                        <a class="btn btn-primary" href="{% url 'web_app:tanfolyamok' %}">Tanfolyamok</a>
+                        <a class="btn btn-primary" href="{% url 'web_app:gyik' %}">Gyakran ismételt kérdések</a> </div>
+
+        </div>
+
+
+
+  
+  
+{% endblock %}

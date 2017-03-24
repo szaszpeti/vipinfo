@@ -1,0 +1,29 @@
+{% extends "db_app/baseDBapp.html" %}
+{% load staticfiles %}
+ {% block body_block %}
+
+<div class="container text-center">
+	<h2><strong>QUERY FOR:</h2><h2 style="color:red">"{{nev}}"</strong></h2>
+			<h3>Number of documents were found:</h3> <h3 style="color:red">{{number}}</h3>
+
+<form action="{% url 'db_app:find_meditator' %}" method="GET">
+<input type="submit" value="FIND NEW"><br>
+</form>
+</div>
+<div class="container" align="center">
+	<div class="card card-container">
+
+
+{% if all_meditators %}
+    {% for meditator in all_meditators %}
+    <a class="btn btn-lg btn-primary" href="{% url 'db_app:detail' meditator.id %}"> {{ meditator.name }}</a>
+	<br>
+		<br>
+    {% endfor %}
+{% else %}
+    <h3>No meditator was found!</h3>
+
+</div>
+	</div>
+{% endif %}
+			{% endblock %}

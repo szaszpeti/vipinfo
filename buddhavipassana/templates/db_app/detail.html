@@ -1,0 +1,101 @@
+{% extends "db_app/baseDBapp.html" %}
+{% load staticfiles %}
+ {% block body_block %}
+
+
+
+<div class="container" align="center">
+	<div class="row"></div>
+	 <div class="col-xs-18 col-sm-6 col-md-3">
+
+             <div class="thumbnail">
+    <h2>DETAILS FOR:</h2>
+    <h3 style="color:red"><strong>{{ meditator.name }}</strong></h3>
+
+
+
+<br>
+<form action="{% url 'db_app:find_meditator' %}" method="GET">
+<input type="submit" style="color:blue" value="FIND NEW"><br>
+</form>
+
+<br>
+<form action="#" method="GET">
+<input type="submit" style="color:blue" value="UPDATE: {{meditator.name}}"><br>
+</form>
+
+  <br>
+
+		</div>
+	 </div>
+
+
+
+<div class="col-xs-18 col-sm-6 col-md-6 col-lg-6">
+
+             <div class="thumbnail">
+				 <h2 style="color:red" >{{ meditator.name }}</h2>
+				 <br><br>
+ <table class="table table-striped" cellspacing="0" width="100%">
+
+	 <thead style="background-color:grey">
+    <tr>
+      <th>Fields</th>
+      <th>Stored Data</th>
+    </tr>
+  </thead>
+  <tbody>
+
+		<tr>
+		<th style="color:blue">{{fields.1}}:</th>
+		<th>{{ meditator.name }}</th>
+		</tr>
+        <tr>
+		<th style="color:blue">{{fields.2}}:</th>
+		<th>{{meditator.country}}</th>
+		</tr>
+        <th style="color:blue">{{fields.3}}:</th>
+		<th>{{meditator.born}}</th>
+		</tr>
+        <tr>
+		<th style="color:blue">{{fields.4}}:</th>
+		<th>{{meditator.gender}}</th>
+		</tr>
+        <tr>
+		<th style="color:blue">{{fields.5}}:</th>
+		<th>{{meditator.email}}</th>
+
+		</tr>
+        <th style="color:blue">{{fields.6}}:</th>
+		<th>{{meditator.phone}}</th>
+		</tr>
+        <tr>
+		<th style="color:blue">{{fields.7}}:</th>
+		<th>{{meditator.profession}}</th>
+		</tr>
+
+        <tr>
+		<th style="color:blue">{{fields.8}}:</th>
+		<th>{{meditator.course}}</th>
+		</tr>
+        <tr>
+		<th style="color:blue">{{fields.9}}:</th>
+		<th>{{meditator.course_date}}</th>
+		</tr>
+            <th style="color:blue">{{fields.10}}:</th>
+		    <th>{{meditator.teacher}}</th>
+		</tr>
+        </tr>
+            <th style="color:blue">{{fields.11}}:</th>
+		    <th>{{meditator.remarks}}</th>
+		</tr>
+
+
+  </tbody>
+ </table>
+<br><br>
+</div>
+</div>
+
+
+{% endblock %}

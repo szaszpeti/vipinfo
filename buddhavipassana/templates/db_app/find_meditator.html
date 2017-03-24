@@ -1,0 +1,44 @@
+{% extends "db_app/baseDBapp.html" %}
+{% load staticfiles %}
+ {% block body_block %}
+<div class="container-fluid text-center">
+
+	<h2><strong>FIND MEDITATOR!</strong></h2>
+	<p> You have different options to query for Meditators, please choose:</p>
+</div>
+<div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+
+            <form class="form-signin" method="post" action="{% url 'db_app:find_meditator_byname' %}">
+                 {% csrf_token %}
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" name="nev" id="inputEmail" class="form-control" placeholder="Name" value="" required autofocus>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Find</button>
+            </form><!-- /form -->
+
+			<form class="form-signin" method="post" action="{% url 'db_app:find_meditator_bycountry' %}">
+                 {% csrf_token %}
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" name="orszag" id="inputEmail" class="form-control" placeholder="Country of origin" value="" required autofocus>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Find</button>
+            </form><!-- /form -->
+
+			<form class="form-signin" method="post" action="{% url 'db_app:find_meditator_byborn' %}">
+                 {% csrf_token %}
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" name="ev" id="inputEmail" class="form-control" placeholder="Year of Born" value="" required autofocus>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Find</button>
+            </form><!-- /form -->
+
+			<form class="form-signin" method="post" action="{% url 'db_app:find_meditator_byprofession' %}">
+                 {% csrf_token %}
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" name="foglalkozas" id="inputEmail" class="form-control" placeholder="Profession" value="" required autofocus>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Find</button>
+            </form><!-- /form -->
+
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+{% endblock %}

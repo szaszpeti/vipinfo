@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/buddha.css' %}"/>
+      <link href="https://fonts.googleapis.com/css?family=Cinzel|Sanchez" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+  	<!-- DOCUMENTATION NAVBAR -->
+
+  	<nav class="navbar navbar-inverse" style="border:5px solid #1aef28;">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+            </button>
+
+        <a class="navbar-brand" href="{% url 'web_app:buddhavipassana_intro' %}" style="color:#e0db3e;">BUDDHAVIPASSANA</a>
+      </div>
+
+      <!-- Anything inside of collapse navbar-collapse goes into the "hamburger" -->
+      <div class="collapse navbar-collapse" id="topNavBar">
+          <ul class="nav navbar-nav navbar-left">
+              <li><a href="{% url 'index' %}"style="color:blue;"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp HOME</a></li>
+          </ul>
+       <ul class="nav navbar-nav navbar-right">
+			  <li><a href="{% url 'web_app:ajahnEng' %}">Ajahn Tong</a></li>
+			  <li><a href="{% url 'web_app:about' %}">About</a></li>
+              <li><a href="{% url 'web_app:teachers' %}">Teachers</a></li>
+			  <li><a href="{% url 'web_app:courses' %}">Courses</a></li>
+                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Information<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				  <li><a href="{% url 'web_app:technique' %}">Technique</a></li>
+				  <li><a href="{% url 'web_app:faq' %}">FAQ</a></li>
+				</ul>
+			  </li>
+
+           <li><a href="{% url 'web_app:contact' %}">Contact</a></li>
+                <a href="{% url 'web_app:buddhavipassana_intro' %}" class="navbar-logo navbar-right"><img src="{% static 'images/flag_hun.png' %}"/></a>
+			</ul>
+
+
+        <!-- Stuff on the Right -->
+
+
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+<div class="container">
+    {% block body_block %}
+    {% endblock %}
+    </div>
+
+  <!-- OTHER STUFF ON THE PAGE -->
+  <!-- Need to have JQuery and Javascript for DropDown Actions to work -->
+
+
+
+</body>
+ <script
+  src="http://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</html>

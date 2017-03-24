@@ -1,0 +1,57 @@
+{% extends 'blog_info/blogBase.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+<div class="container">
+    <div class="row">
+
+
+         <div class="col-sm-6 col-md-3 col-lg-6">
+
+             <div class="thumbnail">
+                <form id="contact-form" method="POST" action="{% url 'blog_info:blog_update' category.id %}" enctype="multipart/form-data">
+                    {%  csrf_token %}
+
+                    <div class="controls">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_name">Topic *</label>
+                                    <input id="form_name" type="text" name="topic" class="form-control"  value="{{topic}}" placeholder="Topic *" required="required" data-error="Topic is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_lastname">Topic_info*</label>
+                                    <input id="form_lastname" type="text" name="topic_info" class="form-control" value="{{topic_info}}" placeholder="Topic info*" required="required" data-error="Topic info is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_email">Logo *</label>
+                                    <input id="form_email" type="file" name="topic_logo" class="form-control" value="{{topic_logo}}" placeholder="Logo *" required="required" data-error="Valid logo is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-success btn-send" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </form>
+
+             </div>
+         </div>
+
+{% endblock %}

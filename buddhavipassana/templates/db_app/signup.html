@@ -1,0 +1,31 @@
+
+<div class="container text-center">
+    <h1>SIGN UP NEW USER</h1>
+</div>
+<div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+
+            <form class="form-signin" method="post" action="/signup">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Username" value="{{username}}"required autofocus>
+                <p class="error">{{username_error}}</p>
+                <p class="error"></p>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" value="" required>
+                 <p class="error">{{password_error}}</p>
+                 <input type="password" name="verify" id="inputPassword" class="form-control" placeholder="Verify-password" value="" required>
+                 <p class="error">{{verify_error}}</p>
+                <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Email" value="{{email}}" required>
+                <p class="error">{{email_error}}</p>
+
+
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign Up</button>
+            </form><!-- /form -->
+
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+
+  </body>
+
+</html>

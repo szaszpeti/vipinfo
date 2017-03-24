@@ -1,0 +1,45 @@
+{% extends 'blog_info/blogBase.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+
+
+
+<div class="container" id="tourpackages-carousel">
+
+      <div class="row">
+
+
+         <div class="col-xs-18 col-sm-6 col-md-3">
+
+             <div class="thumbnail" style="background: silver; border: 5px solid red;">
+             <img  src="{{ category.topic_logo.url }}" class="img-responsive"/>
+                 <div class="caption">
+
+                     <h2><strong>{{category.topic}}</strong></h2>
+                    <h3> {{category.topic_info}}</h3>
+                 </div>
+             </div>
+         </div>
+{% for doc in document %}
+
+          <div class="col-xs-18 col-sm-6 col-md-3">
+              <div class="thumbnail" style="background:white;">
+
+
+                    <img src="{{ doc.document_logo.url }}" class="img-responsive"/>
+                <div class="caption">
+                      <h5>{{doc.document_title}}</h5></li>
+                     <a href="#" class="btn btn-primary btn-sm">Read</a>
+                </div>
+              </div>
+
+          </div>
+          {% endfor %}
+      </div>
+</div>
+
+
+
+
+{% endblock %}

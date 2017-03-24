@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Viberr{% endblock %}</title>
+        {% load staticfiles %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/music.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Sanchez" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+
+ <script src="http://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+            </button>
+            <a class="navbar-brand" href="{% url 'blog_info:blog_index' %}">VIPASSANA-INFO</a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a href="{% url 'index' %}">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+                    </a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search" method="GET" action="#">
+                <div class="form-group">
+                    <input type="text", class="form-control" name="q" value="">
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Topic
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout
+                    </a>
+                </li>
+            </ul>
+            </div>
+    </div>
+</nav>
+<div class="container">
+
+      <div class="row">
+
+
+         <div class="col-sm-6 col-md-3 col-lg-3">
+
+             <div class="thumbnail" style="background: silver; border: 5px solid red;">
+             <img  src="{{ doc.document_logo.url }}" class="img-responsive"/>
+                 <div class="caption">
+
+                     <h3><strong>{{doc.document_title}}</strong></h3>
+
+                 </div>
+             </div>
+         </div>
+
+
+      <div class="col-sm-6 col-md-3 col-lg-9">
+          <div class="jumbotron">
+              <h2>{{ doc.document_title }}</h2>
+
+              <div class="container">
+
+
+<iframe width="420" height="242" src="https://www.youtube.com/embed/nsN7NLs-0jI" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+              {% block body_block %}
+    {% endblock %}
+              </div>
+      </div>
+      </div>
+
+</body>
+</html>
+
+

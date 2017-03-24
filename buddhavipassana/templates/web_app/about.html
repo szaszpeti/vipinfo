@@ -1,0 +1,29 @@
+﻿{% extends "web_app/baseWebappENG.html" %}
+{% load staticfiles %}
+ {% block body_block %}
+
+<div class="container">
+    <h1></h1>
+      <br>  <br><br><br><br><br><br>
+      <h1></h1>
+    <br>
+
+
+        <div class="container text-center">
+
+
+
+                    <h1 class="">BUDDHAVIPASSANA.HU</h1><br>
+                    <p class="">The website was created to help organise meditation courses following the lineage and technique of the  <a href="{% url 'web_app:ajahnEng' %}" class="text-primary">Venerable Ajahn Tong Sirimangalo</a>.<br>  <br><a href="{% url 'web_app:teachers' %}" class="text-primary">Thanat and Kathryn Chindaporn</a> started to teach the technique on the international level more than 25 years ago and they also support the organisation of  courses in Hungary.&nbsp;<br><br></p>
+                    <div class=""> <a class="btn btn-primary" href="{% url 'web_app:ajahnEng' %}">Ajahn Tong</a>
+                        <a class="btn btn-primary" href="{% url 'web_app:teachers' %}">Teachers</a>
+                        <a class="btn btn-primary" href="{% url 'web_app:courses' %}">Courses</a>
+                        <a class="btn btn-primary" href="{% url 'web_app:faq' %}">Frequently asked questions</a> </div>
+
+        </div>
+
+
+
+
+
+{% endblock %}

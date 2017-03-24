@@ -1,0 +1,25 @@
+{% extends "db_app/baseDBapp.html" %}
+{% load staticfiles %}
+ {% block body_block %}
+
+				<div class="container-fluid text-center">
+					<h3><strong>WELCOME TO THE MEDITATOR-DB</strong></h3>
+					<h4><strong>Documents available:</strong></h4><h4 style="color:blue"><strong>{{number}}</strong></h4><br>
+
+					<div class="btn-group">
+
+
+					<a href="{% url 'db_app:add_meditator' %}"><button type="button" class="btn btn-primary">ADD MEDITATOR</button></a>
+					<a href="{% url 'db_app:find_meditator' %}"><button type="button" class="btn btn-primary">FIND MEDITATOR</button></a><br><br>
+						<a href="{% url 'db_app:register' %}"><button type="button" class="btn btn-primary">SIGN UP NEW USER</button><div></a><br><br>
+						<a href="#"><button type="button" class="btn btn-primary">STATISTIC</button><div></a>
+				  </div>
+				</div>
+
+
+
+
+
+
+
+{% endblock %}

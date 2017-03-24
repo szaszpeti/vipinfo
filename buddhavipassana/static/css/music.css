@@ -1,0 +1,34 @@
+body{
+    background:url('../images/paper.jpg') ;
+	min-height:100%;
+	background-size:cover;
+		min-height:100%;
+}
+}
+
+h1, h2, h3, h4{
+font-family: 'Cinzel', serif;
+}
+
+
+p{
+font-family: 'Sanchez', serif;
+}
+
+
+#detail_main{
+background: silver;
+border: 2px solid red;
+}
+/*
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+*/

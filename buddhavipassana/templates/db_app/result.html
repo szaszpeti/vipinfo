@@ -1,0 +1,51 @@
+{% extends "db_app/baseDBapp.html" %}
+{% load staticfiles %}
+ {% block body_block %}
+
+
+<div class="container text-center">
+	<h1><strong> QUERY RESULT FOR MEDITATOR :<br><h3 style="color:red"> {{word}}</h3></strong>
+</h1>
+</div>
+<div class="container text-center">
+ <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+
+	 <thead>
+    <tr>
+      <th>Fields</th>
+      <th>Stored Data</th>
+    </tr>
+  </thead>
+  <tbody>
+		%for x,y in zip(column, meditator):
+		<tr>
+		<th style="color:blue">{{x.upper()}}:</th>
+		<th>{{y}}</th>
+		</tr>
+		%end
+
+<br>
+<form action="/welcome_main" method="GET">
+<input type="submit" value="FIND NEW"><br>
+</form>
+
+<br>
+<form action="#" method="GET">
+<input type="submit" value="UPDATE: {{word}}"><br>
+</form>
+
+  <br>
+  </tbody>
+ </table>
+
+</div>
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

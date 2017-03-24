@@ -1,0 +1,111 @@
+﻿{% extends "web_app/baseWebapp.html" %}
+{% load staticfiles %}
+ {% block body_block %}
+<div class="container">
+    <h1></h1>
+    <br><br><br><br><br><br><br>
+      <h1></h1>
+    <br>
+        
+       <div class="container text-center">
+           <div class="thumbnails">
+
+            <h2 class="contact"><strong>KAPCSOLAT</strong></h2><br>
+               <p><strong>Kérdéseket, észrevételeket, javaslatokat, tanfolyami regisztrációkat az alábbi email címen, telefonszámon, vagy a lenti íven várjuk.</strong><br>info@buddhavipassana.hu<br>Szervező: Szaszák Péter<br>tel: +36-30-9082823<br><br><br></p>
+
+
+           </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+
+
+         <div class="col-sm-6 col-md-3 col-lg-6">
+
+             <div class="thumbnail">
+
+<form id="contact-form" method="POST" action="{% url 'web_app:kapcsolat'%}" role="form">
+    {% csrf_token %}
+
+    <div class="controls">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_name">Vezeték név *</label>
+                    <input id="form_name" type="text" name="first_name" class="form-control" placeholder="Vezeték név *" value="{{first_name}}" required="required" data-error="Firstname is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_lastname">Kereszt név *</label>
+                    <input id="form_lastname" type="text" name="last_name" class="form-control" placeholder="Kereszt név*" value="{{last_name}}" required="required" data-error="Lastname is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_email">Email *</label>
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Email cím *" value="{{email}}" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_phone">Telefon</label>
+                    <input id="form_phone" type="text" name="phone" class="form-control" placeholder="Telefonszám" value="{{phone}}">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="form_message">Üzenet *</label>
+                    <textarea id="form_message" type="text"name="message" class="form-control" value="{{message}}"placeholder="Üzenet tartalma *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-success btn-send" value="Küldés">
+            </div>
+        </div>
+
+    </div>
+
+</form>
+             </div>
+         </div>
+   <div class="col-sm-6 col-md-3 col-lg-6">
+
+             <div class="thumbnail" align="center" style="background:transparent; border:0px">
+                 <h4><strong>Az Ajahn Tong hagyományvonalán gyakorolt meditációs technika megtalálható még:</strong><br></h4>
+               <h4><a href="http://www.vipassana.sk" class="text-primary" target="_blank">Szlovákia</a><br></h4>
+               <h4><a href="http://www.tisarana.cz" class="text-primary" target="_blank">Csehország</a><br></h4>
+               <h4><a href="http://www.vipassana-dhammacari.com" class="text-primary" target="_blank">Németország</a><br></h4>
+               <h4><a href="http://buddhavipassana.ca" class="text-primary" target="_blank">Kanada</a><br></h4>
+
+    </div>
+
+</div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+    <!--
+
+    <div class="container" align="center">
+<form method="POST">
+    {% csrf_token %}
+        {{form.as_p}}
+<input type="submit" class="btn btn-primary" >
+    </form>
+    </div> -->

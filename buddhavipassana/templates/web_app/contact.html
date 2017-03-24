@@ -1,0 +1,104 @@
+﻿{% extends "web_app/baseWebappENG.html" %}
+{% load staticfiles %}
+ {% block body_block %}
+
+
+<div class="container">
+    <h1></h1>
+    <br><br><br><br><br><br><br>
+      <h1></h1>
+    <br>
+
+
+       <div class="container text-center">
+
+
+
+
+
+            <h2 class="contact"><strong>CONTACT</strong></h2><br>
+           <h3><strong>For course registration please contact us at:</strong><br>info@buddhavipassana.hu<br>Contact person: Szaszák Péter<br>tel: +36-30-9082823<br><br><br></h3>
+
+           </div>
+
+
+
+<div class="container">
+    <div class="row">
+
+
+         <div class="col-sm-6 col-md-3 col-lg-6">
+
+             <div class="thumbnail">
+                <form id="contact-form" method="post" action="{% url 'web_app:contact' %}" role="form">
+                    {%  csrf_token %}
+
+                    <div class="controls">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_name">Last Name *</label>
+                                    <input id="form_name" type="text" name="last_name" class="form-control"  value="{{last_name}}" placeholder="Last Name *" required="required" data-error="Firstname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_lastname">First Name*</label>
+                                    <input id="form_lastname" type="text" name="first_name" class="form-control" value="{{first_name}}" placeholder="First Name*" required="required" data-error="Lastname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_email">Email *</label>
+                                    <input id="form_email" type="email" name="email" class="form-control" value="{{email}}" placeholder="Email cím *" required="required" data-error="Valid email is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_phone">Phone</label>
+                                    <input id="form_phone" type="tel" name="phone" value="{{phone}}" class="form-control" placeholder="Phone">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_message">Message *</label>
+                                    <textarea id="form_message" name="message" class="form-control" value="{{message}}" placeholder="Please leave a message here *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-success btn-send" value="Küldés">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </form>
+
+             </div>
+         </div>
+
+         <div class="col-sm-6 col-md-3 col-lg-6">
+
+             <div class="thumbnail" align="center">
+    <h3><strong>The meditation technique practiced in the lineage of Ajahn Tong Sirimangalo can be found also here:</strong><br></h3>
+                 <h4><a href="http://www.vipassana.sk" class="text-primary" target="_blank">Slovakia</a><br></h4>
+               <h4><a href="http://www.tisarana.cz" class="text-primary" target="_blank">Czech Republic</a><br></h4>
+               <h4><a href="http://www.vipassana-dhammacari.com" class="text-primary" target="_blank">Germany</a><br></h4>
+               <h4><a href="http://buddhavipassana.ca" class="text-primary" target="_blank">Canada</a><br></p></h4>
+            </div>
+         </div>
+         </div>
+         </div>
+
+{% endblock %}

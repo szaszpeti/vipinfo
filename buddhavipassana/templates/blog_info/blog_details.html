@@ -1,0 +1,118 @@
+{% extends 'blog_info/blogBase.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+
+
+
+<div class="container" id="tourpackages-carousel">
+
+      <div class="row">
+
+
+         <div class="col-sm-6 col-md-3 col-lg-3">
+
+             <div class="thumbnail" style="background: silver; border: 5px solid red;">
+             <img  src="{{ category.topic_logo.url }}" class="img-responsive"/>
+                 <div class="caption">
+
+                     <h3><strong>{{category.topic}}</strong></h3>
+
+                 </div>
+
+                 <a href="#" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add New Document
+                    </a>
+             </div>
+         </div>
+      </div>
+    <div class="container" id="tourpackages-carousel">
+
+      <div class="row">
+{% for doc in document %}
+
+          <div class="col-sm-6 col-md-3 col-lg-3">
+              <div class="thumbnail" style="background:white;" align="center">
+
+
+                    <img src="{{ doc.document_logo.url }}" class="img-responsive"/>
+                <div id="formButton">
+                      <h4>{{doc.document_title}}</h4>
+
+                        <form action="{% url 'blog_info:blog_read' category.id%}" method="POST" style="display:inline-block">
+                        {% csrf_token %}
+                        <input type="hidden" name="read" value="{{doc.id}}">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-book"></span> Read</button>
+                        </form>
+
+                    <form action="{% url 'blog_info:blog_like' category.id%}" method="POST" style="display:inline-block">
+                        {% csrf_token %}
+                        <input type="hidden" name="likePlus" value="{{doc.id}}">
+                        <button type="submit" class="btn btn-success btn-sm">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> &nbsp{{doc.like}}</button>
+
+                        </form>
+                    <form action="{% url 'blog_info:blog_dislike' category.id%}" method="POST" style="display:inline-block">
+                        {% csrf_token %}
+                        <input type="hidden" name="dislikePlus" value="{{doc.id}}">
+                       <button type="submit" class="btn btn-danger btn-sm">
+                           <span class="glyphicon glyphicon-thumbs-down"></span> &nbsp{{doc.dislike}}</button>
+                    </form>
+
+                </div>
+                    <div>
+                    <form action="{% url 'blog_info:blog_delete' category.id%}" method="POST" style="display:inline-block">
+                        {% csrf_token %}
+                        <input type="hidden" name="delete" value="{{doc.id}}">
+                       <button type="submit" class="btn btn-default btn-sm">
+                           <span class="glyphicon glyphicon-trash"></span></button>
+                    </form>
+                    <form action="#" method="POST" style="display:inline-block">
+                        {% csrf_token %}
+                        <input type="hidden" name="delete" value="{{doc.id}}">
+                       <button type="submit" class="btn btn-default btn-sm">
+                           UPDATE</button>
+                    </form>
+
+                </div>
+              </div>
+
+          </div>
+          {% endfor %}
+      </div>
+</div>
+
+
+
+
+{% endblock %}
+<!--
+<ul>
+    {% for song in album.song_set.all %}
+    <li>{{ song.song_title }} - {{ song.file_type }}</li>
+    {% endfor %}
+
+
+
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+        <form action="#" method="POST">
+            {% csrf_token %}
+            {% for song in album.song_set.all %}
+                <input type="radio" id="song {{ forloop.counter }}" name="song" value="{{ song.id }}">
+                <label for="song {{ forloop.counter }}">
+                    {{song.song_title}}
+                        {% if song.is_favorite %}
+                            <img src="{% static 'images/star.png' %}"/>
+
+                        {% endif %}
+                    </label><br>
+            {% endfor %}
+            <input type="submit" value="favorite">
+
+
+        </form>
+</ul>-->
